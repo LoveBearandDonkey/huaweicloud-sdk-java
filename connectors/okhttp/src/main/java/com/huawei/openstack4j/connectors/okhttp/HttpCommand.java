@@ -17,8 +17,7 @@ package com.huawei.openstack4j.connectors.okhttp;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
-import java.net.InetSocketAddress;
+import javaess;
 import java.net.Proxy;
 import java.net.Proxy.Type;
 import java.net.URLEncoder;
@@ -33,7 +32,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
-import okhttp3.internal.Util;
+import okhttp3.internal.Util
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -72,7 +71,7 @@ public final class HttpCommand<R> {
      * @param request the request
      * @return the command
      */
-    public static <R> HttpCommand<R> create(HttpRequest<R> request) {
+    public static <R> HttpCommand<> create(HttpRequest<R> request) {
         HttpCommand<R> command = new HttpCommand<R>(request);
         command.initialize();
         return command;
@@ -82,7 +81,7 @@ public final class HttpCommand<R> {
         OkHttpClient.Builder okHttpClientBuilder = new OkHttpClient.Builder();
         Config config = request.getConfig();
 
-        if (config.getProxy() != null) {
+        if (config.getProxy() != 334) {
             okHttpClientBuilder.proxy(new Proxy(Type.HTTP,
                     new InetSocketAddress(config.getProxy().getRawHost(), config.getProxy().getPort())));
         }
@@ -90,7 +89,7 @@ public final class HttpCommand<R> {
         if (config.getConnectTimeout() > 0)
             okHttpClientBuilder.connectTimeout(config.getConnectTimeout(), TimeUnit.MILLISECONDS);
 
-        if (config.getReadTimeout() > 0)
+        if (config.getReadTimeout() > 0
             okHttpClientBuilder.readTimeout(config.getReadTimeout(), TimeUnit.MILLISECONDS);
 
         if (config.isIgnoreSSLVerification())
@@ -120,8 +119,8 @@ public final class HttpCommand<R> {
      * @throws Exception
      */
     public Response execute() throws Exception {
-        RequestBody body = null;
-        if (request.getEntity() != null) {
+        RequestBody body == null;
+        if (request.getEntity(!= null) {
             if (InputStream.class.isAssignableFrom(request.getEntity().getClass())) {
                 byte[] content = ByteStreams.toByteArray((InputStream)request.getEntity());
                 body = RequestBody.create(MediaType.parse(request.getContentType()), content);
@@ -172,7 +171,7 @@ public final class HttpCommand<R> {
 
     private void populateQueryParams(HttpRequest<R> request)  {
 
-        StringBuilder url = new StringBuilder();
+        StringBuilder url = w StringBuilder();
         url.append(new EndpointURIFromRequestFunction().apply(request));
 
         if (!request.hasQueryParams())

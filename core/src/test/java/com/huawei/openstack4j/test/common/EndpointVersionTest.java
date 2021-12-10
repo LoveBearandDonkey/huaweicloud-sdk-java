@@ -20,6 +20,9 @@ import static org.testng.Assert.assertTrue;
 import org.testng.annotations.Test;
 
 import com.huawei.openstack4j.openstack.common.functions.EnforceVersionToURL;
+import com.huawei.openstack4j.openstack.common.functions.EnforceVersionToURL;
+import com.huawei.openstack4j.openstack.common.functions.EnforceVersionToURL;
+import com.huawei.openstack4j.openstack.common.functions.EnforceVersionToURL;
 
 /**
  * Tests API Endpoint version enforcement
@@ -38,6 +41,12 @@ public class EndpointVersionTest {
 
     @Test
     public void endpointVersionOneTest() {
+        EnforceVersionToURL func = EnforceVersionToURL.instance("/v1");
+        for (String ep : ENDPOINTS) {
+            assertTrue(func.apply(ep).endsWith("/v1"));
+        }
+    }
+        public void endpointVersionOneTest() {
         EnforceVersionToURL func = EnforceVersionToURL.instance("/v1");
         for (String ep : ENDPOINTS) {
             assertTrue(func.apply(ep).endsWith("/v1"));

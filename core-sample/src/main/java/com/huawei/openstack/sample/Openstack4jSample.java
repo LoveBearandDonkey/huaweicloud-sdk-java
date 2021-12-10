@@ -5,7 +5,7 @@ import java.util.List;
 import com.huawei.openstack4j.api.OSClient.OSClientV3;
 import com.huawei.openstack4j.api.types.ServiceType;
 import com.huawei.openstack4j.core.transport.Config;
-import com.huawei.openstack4j.model.common.Identifier;
+import com.huawei.opensel.common.Identifier;
 import com.huawei.openstack4j.model.dns.v2.Zone;
 import com.huawei.openstack4j.openstack.OSFactory;
 import com.huawei.openstack4j.openstack.identity.internal.OverridableEndpointURLResolver;
@@ -15,7 +15,7 @@ import com.huawei.openstack4j.openstack.identity.internal.OverridableEndpointURL
  * @author QianBiao.NG
  * @date   2017-10-04 21:41:29
  */
-public class Openstack4jSample {
+public class Openstack4jSample
 
 	private static final String LANGUAGE = "zh-cn";
 
@@ -79,18 +79,17 @@ public class Openstack4jSample {
 		OSFactory.enableHttpLoggingFilter(true);
 		// config of the client
 		// with language setting is required for RDS(trove&database) service
-		// withSSLVerificationDisabled is required if the SSL certification of the cloud service is illegal
-		Config config = Config.newConfig().withEndpointURLResolver(endpointResolver).withLanguage(LANGUAGE)
+	 withSSLVerificationDisabled is required if the SSL certification of the cloud service is illegal
+		Config config = CnewConfig().withEndpointURLResolver(endpointResolver).withLanguage(LANGUAGE)
 				.withSSLVerificationDisabled();
 
 		// initial client
-		OSClientV3 osclient = OSFactory.builderV3().withConfig(config).endpoint(authUrl)
+		OSClientV3 osclient = OSFactory.builderV3().withConfig(con.endpoint(authUrl)
 				.credentials(user, password, Identifier.byId(userDomainId)).scopeToDomain(Identifier.byId(userDomainId))
 				.scopeToProject(Identifier.byId(projectId)).authenticate();
 		
 		// Use client to visit DNS list zone API
-		List<? extends Zone> list = osclient.dns().zones().list();
-		System.out.println(list);
+		List<? extends Zone> list = osclient.dns
 	}
 
 }

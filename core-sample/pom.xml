@@ -26,7 +26,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-logging</artifactId>
-			<version>1.5.2.RELEASE</version>
+			<version>1.5.22.RELEASE</version>
 			<exclusions>
 				<exclusion>
 					<groupId>ch.qos.logback</groupId>

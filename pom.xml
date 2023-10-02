@@ -256,7 +256,7 @@
 										</goals>
 									</pluginExecutionFilter>
 									<action>
-										<ignore></ignore>
+										<ignore/>
 									</action>
 								</pluginExecution>
 							</pluginExecutions>
@@ -335,7 +335,7 @@
 			<dependency>
 				<groupId>org.testng</groupId>
 				<artifactId>testng</artifactId>
-				<version>6.8</version>
+				<version>6.10</version>
 				<exclusions>
 					<exclusion>
 						<groupId>junit</groupId>
@@ -402,7 +402,6 @@
 	</profiles>
 
 </project>
-<properties>
-  <sonar.organization>lovebearanddonkey</sonar.organization>
-  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-</properties>
+&lt;properties&gt;
+  &lt;sonar.organization&gt;lovebearanddonkey
+  &lt;sonar.host.url&gt;https://sonarcloud.io

@@ -13,20 +13,7 @@
  * 	License for the specific language governing permissions and limitations under    
  * 	the License.                                                                     
  *******************************************************************************/
-package com.huawei.openstack4j.common;
-
-
-/**
- * Model classes decorated with this interface are compatible for write/update operations and can be created via the Builder API.  
- * 
- * @author Jeremy Unruh
- */
-public interface Buildable<B> {
-
-	B toBuilder();
-	
-	/**
-	 * Builder used to create/build corresponding Model Entity 
+ 
 	 * 
 	 * @param <T> The Builder providing the creation of M
 	 * @param <M> The ouput IModelEntity type
@@ -47,6 +34,13 @@ public interface Buildable<B> {
 		 *
 		 * @param The Model M
 		 * @return Builder
+   package com.huawei.openstack4j.common;
+
+
+/**
+ * Model classes decorated with this interface are compatible for write/update operations and can be created via the Builder API.  
+ * 
+
 		 */
 		 T from(M in);
 	}
